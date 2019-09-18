@@ -1,0 +1,47 @@
+
+.container_d {
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container_e {
+  height: 75vh;
+  display: flex;
+  background-color: #eee;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tui-list-box-mine{
+  border-top:1px solid #c8c7cc;
+  border-bottom: 1px solid #c8c7cc;
+  margin-top: 250rpx;
+  }
+
+.container_mine {
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 70rpx;
+}
+
+.container_photo{
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.userinfo-avatar{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 5rpx;
+}

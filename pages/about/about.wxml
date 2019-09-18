@@ -1,0 +1,22 @@
+<view class='container'>
+    <image class='about-banner' src='{{imagePath}}'>
+    </image>
+    <view>
+        <text style='font-weight: bold;font-size: 45rpx;'>{{developer}}</text>
+    </view> 
+    <view>
+        <text style='font-style: italic;font-size: 30rpx'>{{name1}}</text>
+    </view>
+    <view>
+        <text style='font-style: italic;font-size: 30rpx'>{{name2}}</text>
+    </view>
+    <view>
+        <text style='font-style: italic;font-size: 30rpx'>{{name3}}</text>
+    </view>
+    <view>
+        <text style='font-weight: bold;font-size: 45rpx;'>{{viewPlace}}</text>
+    </view>
+    <view>
+        <text style='font-style: italic;font-size:30rpx'>{{viewPath}}</text>
+    </view>
+</view>

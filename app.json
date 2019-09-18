@@ -1,0 +1,45 @@
+{
+  "pages": [
+          "pages/create/create",
+          "pages/accordion/accordion",
+          "pages/mine/mine",
+          "pages/about/about",
+          "pages/diary/diary",
+          "pages/mylist/mylist",
+          "pages/mydiary/mydiary"
+          
+  ],
+  "tabBar": {
+  
+    "list": [
+      {
+        "text": "创建清单",
+        "pagePath": "pages/create/create",
+        "iconPath": "images/icons/create.png",
+        "selectedIconPath": "images/icons/selected_create.png"
+      },
+      {
+        "text": "写日记",
+        "pagePath": "pages/diary/diary",
+        "iconPath": "images/icons/diary1.png",
+        "selectedIconPath": "images/icons/selected_diary.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/icons/mine.png",
+        "selectedIconPath": "images/icons/selected_mine.png"
+      }
+      
+    ],
+    
+   "color": "#000",
+   "selectedColor": "#dd6572"
+  
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Philtrip"
+  }
+}

@@ -1,0 +1,6 @@
+
+.about-banner{
+  width:470rpx;
+  height:375rpx;
+  border-radius: 50%;
+}

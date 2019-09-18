@@ -1,0 +1,26 @@
+.xuxian{
+  width: 740rpx;
+  height: 4rpx;
+}
+
+.airline{
+  width: 400rpx;
+  height: 100rpx;
+}
+
+.container_next {
+  margin-top: 45rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.xc_image{
+  width: 30px;
+  height: 30px;
+}
+
+.content_picker{
+  color:#dd6572;
+}

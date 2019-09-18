@@ -1,0 +1,161 @@
+
+<!--服饰穿搭-->
+<view class="tui-accordion-content">
+  <view class="tui-menu-list {{isShowFrom1 ? 'tui-shangjiantou' : 'tui-xiajiantou'}}">
+    <view bindtap="showFrom" data-param="1">
+        <image class='image' src='/images/icons/clothe.png'></image>
+        <text style='font-weight:bold;font-family:"宋体"; font-size:20px;'>服饰穿搭</text> 
+    </view>
+
+    <view class="{{isShowFrom1 ? '' : 'tui-hide'}}">
+
+
+      <view>
+
+          <view class='container_c'>
+              <text>T-恤</text>
+              <text>X</text>
+              <picker name="cataPicker" bindchange="bindPickerChange1" value="{{Tshirt}}" range="{{array2}}">
+                  <view class="picker">
+                    {{array2[Tshirt]}}
+                  </view>
+              </picker>
+          </view>
+
+          <view class='container_c'>
+              <text>裤子</text>
+              <text>X</text>
+              <picker name="cataPicker" bindchange="bindPickerChange2" value="{{pants}}" range="{{array2}}">
+                    <view class="picker">
+                      {{array2[pants]}}
+                    </view>
+              </picker>
+          </view>
+      </view>
+
+
+    </view>
+  </view>
+</view>
+
+
+<!--医疗用品-->
+
+<view class="tui-accordion-content">
+  <view class="tui-menu-list {{isShowFrom2 ? 'tui-shangjiantou' : 'tui-xiajiantou'}}">
+      <view bindtap="showFrom" data-param="2">
+              <image class='image' src='/images/icons/medicine.png'></image>
+              <text style='font-weight:bold;font-family:"宋体"; font-size:20px;'>医药用品</text>
+      </view>
+
+      <view class="{{isShowFrom2 ? '' : 'tui-hide'}}">
+
+
+        <view>
+
+            <view class='container_c'>
+                <text>感冒药</text>
+                <text>X</text>
+                <picker name="cataPicker" bindchange="bindPickerChange3" value="{{medicine}}" range="{{array2}}">
+                  <view class="picker">
+                    {{array2[medicine]}}
+                  </view>
+                </picker>
+            </view>
+
+            <view class='container_c'>
+                <text>医疗包</text>
+                <text>X</text>
+                <picker name="cataPicker" bindchange="bindPickerChange4" value="{{pack}}" range="{{array2}}">
+                    <view class="picker">
+                      {{array2[pack]}}
+                    </view>
+                </picker>
+            </view>
+
+            <view class='container_c'>
+                <text>止痛药</text>
+                <text>X</text>
+                <picker name="cataPicker" bindchange="bindPickerChange5" value="{{zty}}" range="{{array2}}">
+                    <view class="picker">
+                      {{array2[zty]}}
+                    </view>
+                </picker>
+            </view>
+
+        </view>
+
+
+      </view>
+  </view>
+</view>
+
+<!--生活必需品-->
+
+<view class="tui-accordion-content">
+  <view class="tui-menu-list {{isShowFrom3 ? 'tui-shangjiantou' : 'tui-xiajiantou'}}">
+    <view bindtap="showFrom" data-param="3"> 
+          <image class='image' src='/images/icons/life.png'></image>
+          <text style='font-weight:bold;font-family:"宋体"; font-size:20px;'>生活必需品</text> 
+    </view>
+
+    <view class="{{isShowFrom3 ? '' : 'tui-hide'}}">
+
+        <view>
+
+            <view class='container_c'>
+                  <text>雨伞</text>
+                  <text>X</text>
+                  <picker name="cataPicker" bindchange="bindPickerChange6" value="{{umbrella}}" range="{{array2}}">
+                    <view class="picker">
+                      {{array2[umbrella]}}
+                    </view>
+                  </picker>
+            </view>
+
+            <view class='container_c'>
+                  <text>牙刷</text>
+                  <text>X</text>
+                  <picker name="cataPicker" bindchange="bindPickerChange7" value="{{brush}}" range="{{array2}}">
+                    <view class="picker">
+                      {{array2[brush]}}
+                    </view>
+                  </picker>
+            </view>
+            
+            <view class='container_c'>
+                  <text>毛巾</text>
+                  <text>X</text>
+                  <picker name="cataPicker" bindchange="bindPickerChange8" value="{{towel}}" range="{{array2}}">
+                    <view class="picker">
+                      {{array2[towel]}}
+                    </view>
+                  </picker>
+            </view>
+        </view>
+
+    </view>
+  </view>
+</view>
+
+
+<!--其它用户可自定义的用品-->
+<view class="contentKk">
+      <view class='container_c'>
+          <image class='image' src='/images/icons/other.png'></image>
+      </view>
+
+
+
+      <view class='section'>
+          <textarea cursor-spacing='10rpx' bindinput='bindOtherThings' value='{{otherThings}}' auto-height placeholder="在这您可以备注您的其它物品..." />
+      </view>
+  
+</view>
+
+
+<view class='container_c'>
+  <button bindtap='cancel' size='mini' type='warn' >取消</button>
+  <button bindtap='finish' size='mini' type='primary' >完成</button>
+</view>
+

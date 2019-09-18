@@ -1,0 +1,123 @@
+ 
+<!--实时天气显示-->
+
+<view class='container_c'>
+  <view>
+    <image class='image' src='/images/icons/city.png'></image>
+    <text>{{weatherData.currentCity}}</text>   
+  </view> 
+
+  <view>
+    <image class='image' src='/images/icons/pm2.5.png'></image>
+    <text>PM2.5:</text>
+    <text>{{weatherData.pm25}}</text>   
+  </view> 
+
+  <view>
+    <image class='weather_image' src='/images/icons/weather.png'></image>
+    <text>{{weatherData.weatherDesc}}</text>   
+  </view>
+</view>
+
+<view class='container_c'>
+  <view>
+    <image class='weather_image' src='/images/icons/date.png'></image>
+    <text>{{weatherData.date}}</text>   
+  </view>
+</view>
+
+<view class='container_c'>
+  <view>
+    <image class='image' src='/images/icons/temp.png'></image>
+    <text>{{weatherData.temperature}}</text>   
+  </view>
+
+
+  <view>
+    <image class='weather_image' src='/images/icons/wind.png'></image>
+    <text>{{weatherData.wind}}</text>   
+  </view>
+</view>
+
+<view style="padding-top:30px"></view>
+
+
+
+<view class="tui-accordion-content">
+  <view class="tui-menu-list {{isShowFrom1 ? 'tui-shangjiantou' : 'tui-xiajiantou'}}">
+    <view bindtap="showFrom" data-param="1">
+     <image class='image' src='/images/icons/weather.png'></image>
+     <text style='font-weight:bold;font-family:"宋体"; font-size:20px;'>未来天气</text> 
+</view>
+    <view class="{{isShowFrom1 ? '' : 'tui-hide'}}">
+
+<block wx:for="{{futureWeather}}">  
+    <view style="border:1px solid #ccc; margin:5px; border-radius: 5px;">
+
+        <view class='container_c'>
+          <view>
+            <image class='weather_image' src='/images/icons/date.png'></image>  
+            <text>{{item.date}}</text>
+          </view>
+        </view> 
+
+        <view class='container_c'>
+          <view>
+            <image class='weather_image' src='/images/icons/temp.png'></image>  
+            <text>{{item.temperature}}</text>
+          </view>
+        </view>
+         
+        <view class='container_c'>
+          <view>
+            <image class='weather_image' src='/images/icons/weather.png'></image>  
+            <text>{{item.weather}}</text>
+          </view>
+        </view>
+
+         <view class='container_c'>
+          <view>
+            <image class='weather_image' src='/images/icons/wind.png'></image>  
+            <text>{{item.wind}}</text>
+          </view>
+        </view>
+         
+    </view>  
+</block>
+
+    </view>
+  </view>
+</view>
+
+  <view class='contentKk'>
+ 
+     <textarea style='margin-top:{{top}}' disabled='{{isDisabled}}' cursor-spacing='10rpx' bindinput='bindDiary' value='{{diary}}' maxlength='-1' placeholder="开始记录美好的一天吧..." />
+
+  </view>
+
+
+<view class="picture_content">
+    <button style="height:80rpx;"type='primary' bindtap='chooseImage' hidden='{{isImgMax}}'>添加照片</button>
+    <view class="picture_contentphoto">
+      <image class='imgList'  wx:for='{{img}}' wx:for-item='item' wx:key='*this' data-index='{{index}}' src='{{item}}' bindtap='previewImg' >
+         <icon class='imgCancel' type='clear' size='25' data-index='{{index}}' catchtap='deleteImg'></icon>
+         </image>
+    </view>
+  </view>
+  <button hidden='{{img[0]==null}}' class='button_text' type='primary' style='margin:30rpx;' bindtap="saveImgs">确认上传{{img.length}}/{{imgMax}}</button>
+
+
+  <view class='container_diary'>
+            <button bindtap='reset' size='mini' type='warn' >清空</button>
+            <button bindtap='save' size='mini' type='primary' >保存</button>
+  </view>
+
+    <modal 
+      title="确认删除？"
+      hidden="{{hiddenModal}}"
+      confirm-text="确认"
+      cancel-text="取消"
+      bindconfirm="Confirm"
+      bindcancel="Cancel" >
+      这将会删除您刚刚所输入的日记...
+    </modal>

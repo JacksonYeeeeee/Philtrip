@@ -1,0 +1,130 @@
+
+<view>
+    <image class='image' src='/images/icons/name.png'></image>
+    <text class='character_title'>旅行名称</text>
+    <input placeholder='请输入旅行名称（20字以内）' maxlength='20' bindinput='bindJournalName' value='{{journalName}}'/>
+</view>
+
+<view class='container_image'>
+    <image class='xuxian' src='/images/icons/line_x.png'></image>
+</view>
+
+<view>
+      <image class='image' src='/images/icons/people.png'></image>
+      <text class='character_title'>旅行人数</text>
+  <view  class='container_c'>
+      <image class='image' src='/images/icons/male.png' />
+      <text>male</text>
+
+      <picker class='content_picker' name="cataPicker1" bindchange="bindPickerChange4" value="{{male}}" range="{{array}}">
+        <view class="picker">
+          {{array[male]}}
+        </view>
+      </picker>
+      <image class='image' src='/images/icons/line.png'/>  
+
+
+      <image class='image' src='/images/icons/female.png'/>
+      <text>female</text>
+      <picker class='content_picker' name="cataPicker1" bindchange="bindPickerChange5" value="{{female}}" range="{{array}}">
+        <view class="picker">
+          {{array[female]}}
+        </view>
+      </picker>
+
+      <image class='image' src='/images/icons/line.png'/>  
+      <image class='image' src='/images/icons/kid.png'/>
+      <text>kid</text>
+      <picker class='content_picker' name="cataPicker1" bindchange="bindPickerChange6" value="{{kid}}" range="{{array}}">
+        <view class="picker">
+          {{array[kid]}}
+        </view>
+      </picker>
+  
+
+  </view>
+</view>
+
+<view class='container_image'>
+<image class='xuxian' src='/images/icons/line_x.png'></image>
+</view>
+
+<view>
+      <image class='xc_image' src='/images/icons/xc.png'></image>
+      <text class='character_title'>行程</text>
+    <view class='container_c'>
+
+
+      <picker class='content_picker' name="areaPicker1" bindchange="bindPickerChange1" value="{{journalStart}}" range="{{array1}}">
+        <view class="picker">
+          {{array1[journalStart]}}
+        </view>
+      </picker>
+
+
+      <image class='airline' src='/images/icons/airline.png'></image>
+      
+
+
+      <picker class='content_picker' name="areaPicker2" bindchange="bindPickerChange2" value="{{journalEnd}}" range="{{array1}}">
+        <view class="picker">
+          {{array1[journalEnd]}}
+        </view>
+      </picker>
+      
+    </view>
+
+    <view class='container_image'>
+        <image class='xuxian' src='/images/icons/line_x.png'></image>
+    </view>
+
+    <view class='container_c'>
+      <view>
+        <image class='image' src='/images/icons/goDate.png'></image>
+        <text class='character_title'>出发日期</text>
+      </view>
+      <picker class='content_picker' name="datePicker1" mode="date" value="{{date}}" start="2018-07-20" end="2022-09-01" bindchange="bindDateChange4">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+
+    </view>
+</view>
+
+
+      <view class='container_image'>
+          <image class='xuxian' src='/images/icons/line_x.png'></image>
+      </view>
+
+      <view class='container_c'>
+          <view>
+            <image class='image' src='/images/icons/leixing.png'></image>
+            <text class='character_title'>旅行类型</text>
+          </view>
+
+          <picker class='content_picker' name="cataPicker" bindchange="bindPickerChange3" value="{{journalCata}}" range="{{array5}}">
+            <view class="picker">
+              {{array5[journalCata]}}
+            </view>
+          </picker>
+      
+      </view>
+
+          <view class='container_image'>
+            <image class='xuxian' src='/images/icons/line_x.png'></image>
+          </view>
+
+      <view>
+          <image class='image' src='/images/icons/activity.png'></image>
+          <text class='character_title'>旅行活动</text>
+          <view class="section">
+            <textarea cursor-spacing='50rpx' value='{{journalAc}}' bindinput='bindJournalAc' auto-height placeholder="请输入你的旅行活动..." />
+          </view>
+
+
+      </view>
+      
+      <view class='container_next'>
+                    <button bindtap='gotoNext' size='mini' type='primary' >下一步</button>
+      </view>

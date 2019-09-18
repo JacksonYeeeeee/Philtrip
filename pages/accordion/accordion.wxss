@@ -1,0 +1,17 @@
+
+.tui-accordion-content{
+  margin: 10px;
+  border: 1px solid #c8c7cc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.contentKk{
+  height: 500rpx;
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  border: 2px solid #c8c7cc;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 30rpx;
+  
+}

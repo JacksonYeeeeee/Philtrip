@@ -1,0 +1,60 @@
+
+.tui-accordion-content{
+  margin: 10px;
+  border: 1px solid #c8c7cc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.airline{
+  width: 400rpx;
+  height: 100rpx;
+}
+
+.contentImage{
+  justify-content: flex-end
+}
+
+.contentText{
+  justify-content: flex-start
+}
+
+.contentKk{
+  
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  border: 2px solid #c8c7cc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.container_button{
+  margin: 20rpx 20rpx 20rpx 20rpx;
+}
+
+.swiper-tab{  
+    width: 100%;  
+    line-height: 80rpx; 
+    border-bottom: 2rpx solid #777777;  
+    text-align: center; 
+}  
+
+.swiper-tab-list{  
+    font-size: 30rpx;  
+    font-family: "宋体";
+    display: inline-block;  
+    width: 50%;  
+    color: #777777;  
+} 
+
+.on{ 
+    color: #dd6572;  
+    border-bottom: 5rpx solid #da7c0c;
+}  
+.off{
+    color: #777777
+}  
+
+.swiper-box{ 
+    display: block; 
+    width: 100%; 
+} 

@@ -1,0 +1,45 @@
+
+<view class='container_photo'>
+  <view class='userinfo-avatar'>
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName"></open-data>
+</view>
+  
+
+    <view class="tui-list-box-mine">
+
+      <view class="tui-menu-list tui-youjiantou">
+        <navigator url="/pages/mylist/mylist">
+          <block>
+            <image class='image' src='/images/icons/list.png'></image> 
+            <text>我的清单</text>
+          </block>
+        </navigator>
+      </view>
+
+    <view class="tui-menu-list tui-youjiantou">
+        <navigator url="/pages/mydiary/mydiary">
+          <block>
+            <image class='image' src='/images/icons/diary.png'></image> 
+            <text>我的日记</text>
+          </block>
+        </navigator>
+      </view>
+
+       <view class="tui-menu-list tui-youjiantou">
+        <navigator url="/pages/about/about">
+          <block>
+            <image class='image' src='/images/icons/about.png'></image> 
+            <text>关于Philtrip</text>
+          </block>
+        </navigator>
+      </view>
+
+    </view>
+
+<view class='container_mine'>
+    <button open-type='contact' size='mini' type='warn'>联系客服</button>
+    <button open-type='feedback' size='mini' type='warn'>意见反馈</button>
+</view>
+

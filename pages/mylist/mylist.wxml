@@ -1,0 +1,275 @@
+
+<view class="swiper-tab">  
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : 'off'}}" 
+        data-current="0" bindtap="swichNav">行程清单
+        </view>  
+        <view class="swiper-tab-list {{currentTab==1 ? 'on' : 'off'}}" 
+        data-current="1" bindtap="swichNav">物品清单
+        </view>
+</view> 
+
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" 
+    style="height:1090rpx" bindchange="bindChange"> 
+
+    <!-- 行程清单 -->  
+    <swiper-item> 
+
+
+   <scroll-view scroll-y="true" style='height:1000rpx'>
+
+
+   <block wx:for="{{lists}}" wx:key="item.id" wx:for-index='index'>
+
+
+<view class="tui-accordion-content">
+  <view class="tui-menu-list {{isShowLists ? 'tui-shangjiantou' : 'tui-xiajiantou'}}">
+    <view bindtap="showLists" data-param="{{index}}">
+     <image class='image' src='/images/icons/xc.png'></image>
+<text style='font-weight:bold;font-family:"宋体"; font-size:20px;'>行程{{index+1}}:{{item.journalName}}</text> 
+    </view>
+    <view class="{{isShowLists ? '' : 'tui-hide'}}">
+
+<block wx:if='{{index == indexLists}}'>
+
+    <text style='font-weight:bold;font-family:"宋体";font-size:20px;' class='container_c'>旅游行程安排</text>
+
+      <view class='contentKk'>
+
+          <view class='container_c'>
+                            <text>{{item.journalName}}</text>
+          </view>
+  <!--------------人数布局-------------------->
+          <view  class='container_c'>
+                        <image class='image' src='/images/icons/male.png' />
+                        <text>X</text>
+                        <text>{{array[item.male]}}</text>
+
+                        <image class='image' src='/images/icons/line.png'/>  
+                        <image class='image' src='/images/icons/female.png'/>
+                        <text>X</text>
+                        <text>{{array[item.female]}}</text>
+
+                        <image class='image' src='/images/icons/line.png'/>  
+                        <image class='image' src='/images/icons/kid.png'/>
+                        <text>X</text>
+                        <text>{{array[item.kid]}}</text>
+
+          </view>
+
+  <!--------------起始点布局-------------------->
+          <view class='container_c'>
+
+                    <text>{{array1[item.journalStart]}}</text>
+                    <image class='airline' src='/images/icons/airline.png'></image>
+                    <text>{{array1[item.journalEnd]}}</text>
+                
+          </view>
+
+  <!--------------出发日期布局-------------------->
+          <view class='container_c'>
+                        <text>出发日期</text>
+                        <text>{{item.date}}</text>
+          </view>
+
+  <!--------------旅游类型布局-------------------->
+    <view class='container_d'>
+          <view class='contenImage'>
+                <image class='image' src='/images/icons/leixing.png'></image>
+          </view>
+
+          <view class='contentText'>
+            <text>{{array5[item.journalCata]}}</text>
+          </view>
+    </view>
+
+  <!--------------旅行活动布局-------------------->
+    <view class='container_d'>
+        <view class='contenImage'>
+            <image class='image' src='/images/icons/activity.png'></image>
+        </view>
+
+        <view class='contentText'>
+          <text style=" word-break: break-all">{{item.journalAc}}</text>
+        </view>
+    </view>
+
+</view>
+
+</block>
+
+      </view>
+    </view>
+</view>
+   
+  </block>
+
+
+  
+
+            <view class='container_button'>
+
+              <button bindtap='clear_trip' type='default' size='default'>删除全部行程</button>
+
+            </view>
+
+            <view class='container_button'>
+            
+                <button bindtap='bindClose'  type='primary' size='default'>退出</button>
+            </view>
+
+                  <modal 
+                  title="确认删除？"
+                  hidden="{{hiddenModal}}"
+                  confirm-text="确认"
+                  cancel-text="取消"
+                  bindconfirm="Confirm_trip"
+                  bindcancel="Cancel_trip" >
+                  这将会删除您的所有行程...
+                  </modal>
+
+
+    </scroll-view>
+
+  </swiper-item> 
+
+
+
+
+
+
+
+
+  <swiper-item>
+
+    <scroll-view scroll-y="true" style='height:1000rpx'>
+
+      <block wx:for="{{thingsLists}}" wx:key="item.id" wx:for-index='index'>
+
+        <view class="tui-accordion-content">
+          <view class="tui-menu-list {{isShowThingsLists? 'tui-shangjiantou' : 'tui-xiajiantou'}}">
+            <view bindtap="showThingsLists" data-param="{{index}}">
+            <image class='image' src='/images/icons/list.png'></image>
+        <text style='font-weight:bold;font-family:"宋体"; font-size:20px;'>行程{{index+1}}:物品清单</text> 
+        </view>
+          <view class="{{isShowThingsLists ? '' : 'tui-hide'}}">
+
+ <block wx:if='{{index == indexThingsLists}}'>
+
+                    <text style='font-weight:bold;font-family:"宋体";font-size:20px;' class='container_c'>物品清单</text>
+
+        <!--衣物----------------------------------------------------->
+            <view class='contentKk'>
+              <view class='container_c'>
+                    <image class='image' src='/images/icons/clothe.png'></image>
+              </view>
+
+              <view class='container_c'>
+                          <text>T-恤</text>
+                          <text>X</text>
+                          <text>{{array[item.Tshirt]}}</text>
+              </view>
+
+              <view class='container_c'>
+                          <text>裤子</text>
+                          <text>X</text>
+                          <text>{{array[item.pants]}}</text>
+              </view>
+            </view>
+
+        <!--药物----------------------------------------------------->
+            <view class='contentKk'>
+              <view class='container_c'>
+                              <image class='image' src='/images/icons/medicine.png'></image>
+              </view>
+
+              <view class='container_c'>
+                            <text>感冒药</text>
+                            <text>X</text>
+                            <text>{{array[item.medicine]}}</text>
+              </view>
+
+              <view class='container_c'>
+                            <text>医疗包</text>
+                            <text>X</text>
+                            <text>{{array[item.pack]}}</text>
+              </view>
+
+              <view class='container_c'>
+                            <text>止痛药</text>
+                            <text>X</text>
+                            <text>{{array[item.zty]}}</text>
+              </view>
+            </view>
+
+        <!--日用品----------------------------------------------------->
+            <view class='contentKk'>
+              <view class='container_c'>
+                            <image class='image' src='/images/icons/life.png'></image>
+              </view>
+
+              <view class='container_c'>
+                        <text>雨伞</text>
+                        <text>X</text>
+                        <text>{{array[item.umbrella]}}</text>
+              </view>
+
+              <view class='container_c'>
+                        <text>牙刷</text>
+                        <text>X</text>
+                        <text>{{array[item.brush]}}</text>
+              </view>
+
+              <view class='container_c'>
+                        <text>毛巾</text>
+                        <text>X</text>
+                        <text>{{array[item.towel]}}</text>
+              </view>
+            </view>
+
+        <!--日用品----------------------------------------------------->
+              <view class='contentKk'>
+                    <view class='container_c'>
+                      <image class='image' src='/images/icons/other.png'></image>
+                    </view>
+                    
+                      <text style=" word-break: break-all">{{item.otherThings}}</text>
+                
+              </view>
+
+              </block>
+
+            </view>
+          </view>
+        </view>
+      
+      </block>
+
+
+        <view class='container_button'>
+            <button bindtap='clear_things' type='default' size='default'>删除全部物品</button>
+
+        </view>
+
+        <view class='container_button'>
+              <button bindtap='bindClose'  type='primary' size='default'>退出               </button>
+        </view>
+
+
+
+
+                <modal 
+                title="确认删除？"
+                hidden="{{hiddenModal2}}"
+                confirm-text="确认"
+                cancel-text="取消"
+                bindconfirm="Confirm_things"
+                bindcancel="Cancel_things" >
+                这将会删除您的所有物品清单...
+                </modal>
+
+    </scroll-view>
+
+  </swiper-item>
+
+</swiper>

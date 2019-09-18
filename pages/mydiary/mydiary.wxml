@@ -1,0 +1,48 @@
+
+<block wx:for="{{diarys}}" wx:key="item.id">
+
+  <view class='contentDiary'>
+    
+      <view class='container_book'>
+        <image class='book' src='/images/icons/book.png'></image>
+      </view>
+
+      <view class='contentKk'>
+        <text style=" word-break: break-all">{{item.diary}}</text>
+
+              <block wx:for='{{imgStore}}' wx:key='itemFather.id' wx:for-index='indexFather' >
+                  <view class='imgBox'>
+                    <image class='imgList'  wx:for='{{imgStore[indexFather]}}' wx:for-item='item' wx:key='*this' src='{{item}}' bindtap='previewImg' ></image>
+                  </view>
+              </block>
+      </view>
+
+      
+
+      <view class='contentIcon'>
+        <image class='image' src='/images/icons/selected_close.png' bindtap='bindClose'></image>
+      </view>
+
+      <view class='contentText'>
+        <text class='character'>隐藏</text>
+      </view>
+
+  </view>
+    
+</block>
+
+
+<view class='container_c'>
+  <button bindtap='clear' type='warn' size='mini'>删除</button>
+  <button bindtap='exit' type='primary' size='mini'>退出</button>
+</view>
+
+<modal 
+  title="确认删除？"
+  hidden="{{hiddenModal}}"
+  confirm-text="确认"
+  cancel-text="取消"
+  bindconfirm="Confirm"
+  bindcancel="Cancel" >
+  这将会删除您的所有日记...
+  </modal>

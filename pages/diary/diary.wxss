@@ -1,0 +1,59 @@
+.tui-accordion-content{
+  margin: 10px;
+  border: 1px solid #c8c7cc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.contentKk{
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  border: 2px solid #c8c7cc;
+  border-radius: 5px;
+  
+  font-size: 30rpx;
+  text-indent: 28rpx;
+  height: 450rpx;
+  overflow:scroll;
+}
+
+.weather_image{
+  width: 20px;
+  height: 20px;
+}
+
+.container_diary {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.picture_content{
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  border-top-width: 2px solid #c8c7cc;
+  border-radius: 5px;
+  height: 250rpx;
+  overflow: hidden;
+}
+
+.picture_contentphoto{
+  margin-top:10rpx;
+  overflow: scroll;
+  border-top: 10rpx solid #c8c7cc;
+  border-top-width: 5rpx;
+}
+
+.picture_contentphoto image{
+  width: 223rpx;
+  height: 223rpx;
+  margin-right: 14rpx;
+}
+.picture_contentphoto .imgList{
+  position: relative;
+}
+.picture_contentphoto .imgList .imgCancel{
+position: absolute;
+top: 0rpx;
+right: 0rpx;
+}
